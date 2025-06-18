@@ -21,6 +21,8 @@ footer:
           url: "/more-games"
         - text: "Merge rot"
           url: "/merge-rot"
+        - text: "EthnoGuessr"
+          url: "/ethnoguessr"
     - title: "Quick Links"
       links:
         - text: "GitHub"
