@@ -2,9 +2,9 @@
 slug: scrandle
 title: Scrandle
 description: Experience Scrandle, a delightful daily food comparison game where you guess which dish is more popular based on community votes. Explore global cuisine, test your food intuition, and learn about different cultures through this engaging culinary adventure!
-icon: /images/hot_game/scrandle.png
+icon: https://image.scrandle.pro/hot_game/scrandle.png
 url: https://www.igdb.com/games/scrandle
-previewImage: /images/hot_game/scrandle.png
+previewImage: https://image.scrandle.pro/hot_game/scrandle.png
 type: trivia
 videoUrls:
   - https://www.youtube.com/embed/4-GCV539H38
@@ -22,7 +22,7 @@ whyPlay:
 
 features:
   title: "Key Features of Scrandle"
-  image: "/images/hot_game/scrandle.png"
+  image: "https://image.scrandle.pro/hot_game/scrandle.png"
   items:
     - "Daily Food Comparisons: Scrandle presents two unique dishes daily, challenging players to guess which one receives more community votes"
     - "Community Voting System: Experience real-time democracy in Scrandle as thousands of Twitter followers vote to determine the superior dish"
@@ -31,7 +31,7 @@ features:
 
 characteristics:
   title: "Game Characteristics"
-  image: "/images/hot_game/scrandle.png"
+  image: "https://image.scrandle.pro/hot_game/scrandle.png"
   items:
     - "Easy to Learn: Scrandle's simple interface makes it accessible for players of all ages and culinary knowledge levels"
     - "Family Friendly: Perfect for food lovers of all ages, Scrandle promotes cultural understanding through cuisine"
