@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { games, getGameSlug } from '@/data/games'
 import { cn } from '@/lib/utils'
@@ -52,12 +51,12 @@ export default function RandomGames({ count, isMobile, currentGameSlug }: Random
               className="block bg-gray-800 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-transform duration-300 relative"
             >
               <GameRating game={game} />
-              <div className="relative h-24 sm:h-28 md:h-32">
-                <Image
+              <div className="relative h-20 sm:h-24 md:h-28 rounded-lg overflow-hidden mb-2">
+                <img
                   src={game.icon}
                   alt={game.name}
-                  fill
-                  className="object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="p-2">

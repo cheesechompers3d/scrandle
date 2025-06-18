@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useRef } from "react"
-import Image from "next/image"
 import { Game } from "@/lib/games"
 import { cn } from "@/lib/utils"
 import ShareBar from "./ShareBar"
@@ -94,13 +93,12 @@ export default function GameIframe({ game, onGameSelect, isDarkMode, isMobile }:
         ) : (
           <>
             <div className="absolute inset-0">
-              <Image
+              <img
                 src={game.previewImage || "/images/placeholder.jpg"}
                 alt={game.title}
-                fill
-                sizes={isMobile ? "100vw" : "80vw"}
-                className="object-cover blur-sm transform scale-105"
-                priority
+                className="object-cover blur-sm transform scale-105 w-full h-full absolute inset-0"
+                style={{objectFit: 'cover'}}
+                aria-hidden="true"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 via-blue-900/90 to-black/95" />
             </div>
@@ -115,13 +113,14 @@ export default function GameIframe({ game, onGameSelect, isDarkMode, isMobile }:
                   "relative rounded-xl overflow-hidden shadow-lg mx-auto mb-6",
                   isMobile ? "w-20 h-20" : "w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40"
                 )}>
-                  <Image
+                  <img
                     src={game.icon}
                     alt={game.title}
-                    fill
-                    sizes={isMobile ? "80px" : "96px, (min-width: 640px) 128px, (min-width: 768px) 160px"}
-                    className="object-cover"
-                    priority
+                    className="object-cover w-full h-full"
+                    style={{objectFit: 'cover'}}
+                    width={isMobile ? 80 : 96}
+                    height={isMobile ? 80 : 128}
+                    loading="lazy"
                   />
                 </div>
                 <button
@@ -164,10 +163,9 @@ export default function GameIframe({ game, onGameSelect, isDarkMode, isMobile }:
         isMobile ? "p-2" : "p-3"
       )}>
         <div className="relative w-8 h-8 rounded-md overflow-hidden">
-          <Image
+          <img
             src={game.icon}
             alt={game.title}
-            fill
             className="object-cover"
           />
         </div>

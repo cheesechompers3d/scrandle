@@ -95,11 +95,11 @@ export default function MoreGames() {
                   >
                     <GameRating game={game} />
                     <div className="relative h-36 rounded-lg overflow-hidden mb-2">
-                      <Image
+                      <img
                         src={game.icon}
                         alt={game.name}
-                        fill
-                        className="object-cover"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        loading="lazy"
                       />
                     </div>
                     <div className="p-4">

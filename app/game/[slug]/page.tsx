@@ -156,12 +156,14 @@ export default function GamePage() {
                   
                   <div className="text-center p-4 sm:p-8 max-w-md bg-black/30 rounded-2xl border border-white/10 shadow-2xl">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto mb-4 sm:mb-8 rounded-xl overflow-hidden shadow-lg">
-                      <Image
+                      <img
                         src={game.icon}
                         alt={game.name}
-                        fill
-                        className="object-cover"
-                        priority
+                        className="object-cover w-full h-full"
+                        style={{objectFit: 'cover'}}
+                        width={160}
+                        height={160}
+                        loading="lazy"
                       />
                     </div>
                     <button
@@ -192,11 +194,11 @@ export default function GamePage() {
             {/* 游戏标题栏 - 新的深色导航栏样式 */}
             <div className="flex items-center gap-3 mt-4 bg-gray-800 p-3 rounded-md">
               <div className="relative w-8 h-8 rounded-md overflow-hidden">
-                <Image
+                <img
                   src={game.icon}
                   alt={game.name}
-                  fill
-                  className="object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <h1 className="text-base sm:text-lg font-bold text-white">{game.name}</h1>

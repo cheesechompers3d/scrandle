@@ -76,11 +76,12 @@ export default function GameFeatures({ features, characteristics }: GameFeatures
             {/* 左侧图片 */}
             <div className="lg:w-1/3 aspect-video relative rounded-lg overflow-hidden bg-gradient-to-br from-indigo-800/30 to-purple-800/30 backdrop-blur-sm">
               {features?.image ? (
-                <Image
+                <img
                   src={features.image}
                   alt="Feature Image"
-                  fill
-                  className="object-cover"
+                  className="object-cover w-full h-full absolute inset-0"
+                  style={{objectFit: 'cover'}}
+                  loading="lazy"
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-indigo-300/50">
@@ -125,11 +126,12 @@ export default function GameFeatures({ features, characteristics }: GameFeatures
             {/* 右侧图片 */}
             <div className="lg:w-1/3 aspect-video relative rounded-lg overflow-hidden bg-gradient-to-br from-cyan-800/30 to-teal-800/30 backdrop-blur-sm">
               {characteristics?.image ? (
-                <Image
+                <img
                   src={characteristics.image}
                   alt="Characteristics Image"
-                  fill
-                  className="object-cover"
+                  className="object-cover w-full h-full absolute inset-0"
+                  style={{objectFit: 'cover'}}
+                  loading="lazy"
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-cyan-300/50">

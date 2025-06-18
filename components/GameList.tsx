@@ -56,11 +56,11 @@ export default function GameList({
         >
           <GameRating game={game} />
           <div className="relative aspect-square rounded-lg overflow-hidden mb-2">
-            <Image
+            <img
               src={game.icon}
               alt={game.title}
-              fill
-              className="object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
           <h3 className="text-sm font-medium text-center truncate px-2">
