@@ -31,7 +31,7 @@ export default function Footer() {
       })
   }, [])
 
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchorId: string) => {
+  const handleAnchorClick = (e: React.MouseEvent<HTMLElement>, anchorId: string) => {
     e.preventDefault()
     const element = document.getElementById(anchorId)
     if (element) {
