@@ -9,6 +9,7 @@ interface FooterConfig {
     links?: Array<{
       text: string
       url: string
+      isAnchor?: boolean
     }>
   }>
   copyright: string
@@ -30,6 +31,17 @@ export default function Footer() {
       })
   }, [])
 
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchorId: string) => {
+    e.preventDefault()
+    const element = document.getElementById(anchorId)
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
+
   if (!config) return null
 
   return (
@@ -46,14 +58,23 @@ export default function Footer() {
                 <ul className="space-y-2">
                   {column.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a
-                        href={link.url}
-                        className="text-blue-400 hover:text-blue-300 transition-colors"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {link.text}
-                      </a>
+                      {link.isAnchor ? (
+                        <button
+                          onClick={(e) => handleAnchorClick(e, link.url.replace('#', ''))}
+                          className="text-blue-400 hover:text-blue-300 transition-colors cursor-pointer"
+                        >
+                          {link.text}
+                        </button>
+                      ) : (
+                        <a
+                          href={link.url}
+                          className="text-blue-400 hover:text-blue-300 transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.text}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>

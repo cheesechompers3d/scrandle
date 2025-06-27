@@ -85,13 +85,14 @@ export default function Navbar({
         <div className="flex justify-between items-center">
           {/* Logo */}
           <button onClick={handleLogoClick} className="flex items-center space-x-2">
-            <Image
-              src="/images/logo.png"
-              alt="Game Logo"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
+            <div className="relative w-10 h-10 rounded-full overflow-hidden">
+              <img
+                src="/images/logo.png"
+                alt="Game Logo"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
             <span className="text-2xl font-bold text-white">
               {siteName}
             </span>
